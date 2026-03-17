@@ -1,0 +1,6 @@
+file '/Users/alfred/.openclaw/workspace-kit/tmp/revenuecat-growth-brief/video-assets/scene1_v3.mp3'
+file '/Users/alfred/.openclaw/workspace-kit/tmp/revenuecat-growth-brief/video-assets/scene2_v3.mp3'
+file '/Users/alfred/.openclaw/workspace-kit/tmp/revenuecat-growth-brief/video-assets/scene3_v3.mp3'
+file '/Users/alfred/.openclaw/workspace-kit/tmp/revenuecat-growth-brief/video-assets/scene4_v3.mp3'
+file '/Users/alfred/.openclaw/workspace-kit/tmp/revenuecat-growth-brief/video-assets/scene5_v3.mp3'
+file '/Users/alfred/.openclaw/workspace-kit/tmp/revenuecat-growth-brief/video-assets/scene6_v3.mp3'
