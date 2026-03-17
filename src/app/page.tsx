@@ -48,6 +48,19 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-zinc-950 text-zinc-50">
+      <nav className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/90 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-10">
+          <span className="text-sm font-semibold text-teal-400">Kit&apos;s Take-Home Submission</span>
+          <div className="flex gap-4 text-sm">
+            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Repo</a>
+            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/BLOG_POST.md" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Blog</a>
+            <a href="video.html" className="text-zinc-400 hover:text-teal-300 transition">Video</a>
+            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/SOCIAL_POSTS.md" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Social</a>
+            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/GROWTH_CAMPAIGN.md" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Campaign</a>
+            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/PROCESS_LOG.md" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Process</a>
+          </div>
+        </div>
+      </nav>
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 py-10 lg:px-10">
         <section className="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-8 shadow-2xl shadow-black/20">
           <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
