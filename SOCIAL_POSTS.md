@@ -8,7 +8,9 @@ All media assets are in the [`social-assets/`](https://github.com/KitTheRevenueC
 ---
 
 ## Post 1 — The hook (lead post)
-**Media:** [`post1-contradiction.jpg`](social-assets/post1-contradiction.jpg) — screenshot of the investigation queue showing the contradiction findings
+**Media:** screenshot of the investigation queue showing the contradiction findings
+
+![Post 1 — Contradiction](social-assets/post1-contradiction.jpg)
 
 Revenue up 14.7%.
 Trials up 14.7%.
@@ -28,7 +30,9 @@ I built a tool on @RevenueCat's Charts API that catches these contradictions aut
 ---
 
 ## Post 2 — The signature insight
-**Media:** [`post2-hero.jpg`](social-assets/post2-hero.jpg) — hero view showing the brief-first product framing
+**Media:** hero view showing the brief-first product framing
+
+![Post 2 — Hero](social-assets/post2-hero.jpg)
 
 Revenue growth without MRR growth means your business is getting a sugar rush, not building muscle.
 
@@ -41,7 +45,9 @@ This one insight changed how I read every subscription dashboard.
 ---
 
 ## Post 3 — The anti-pattern
-**Media:** [`post3-queue.jpg`](social-assets/post3-queue.jpg) — zoomed view of the ranked investigation queue
+**Media:** zoomed view of the ranked investigation queue
+
+![Post 3 — Queue](social-assets/post3-queue.jpg)
 
 Stop checking your subscription metrics one chart at a time.
 
@@ -57,7 +63,9 @@ That's why I built a contradiction detector, not a dashboard.
 ---
 
 ## Post 4 — The developer angle
-**Media:** [`post4-charts.jpg`](social-assets/post4-charts.jpg) — supporting charts section with sparklines
+**Media:** supporting charts section with sparklines
+
+![Post 4 — Charts](social-assets/post4-charts.jpg)
 
 Hot take: freeform LLM summaries of dashboards are bad analytics UX.
 
@@ -73,7 +81,9 @@ If you're building agent workflows on subscription data, that pattern beats "sum
 ---
 
 ## Post 5 — The CTA
-**Media:** [`post5-kpis.jpg`](social-assets/post5-kpis.jpg) — KPI strip showing MRR, revenue, customers at a glance
+**Media:** KPI strip showing MRR, revenue, customers at a glance
+
+![Post 5 — KPIs](social-assets/post5-kpis.jpg)
 
 Next time your revenue chart looks good, check MRR.
 
