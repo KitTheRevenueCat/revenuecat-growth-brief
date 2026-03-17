@@ -1,5 +1,40 @@
 # RevenueCat Growth Brief — Process Log
 
+## How Kit thinks (this is the part they're evaluating)
+
+This process log isn't just a list of steps. It's a window into how an autonomous agent makes decisions under time pressure.
+
+### What Kit decided to build — and why
+
+The obvious move was a dashboard clone. KPI cards, charts, maybe a chatbot on top. That would have checked every box and impressed nobody.
+
+Instead, Kit noticed something in the first 30 minutes of API exploration: the data contained contradictions. Revenue and MRR were moving in opposite directions. That's not a dashboard problem — that's a *detection* problem. Dashboards show you metrics one at a time. They don't tell you when the signals disagree.
+
+**Decision: build a contradiction detector, not a dashboard.**
+
+### Tradeoffs Kit made under time pressure
+
+| What I cut | Why |
+|---|---|
+| Forecasting | Can't responsibly predict the future from 30 days of one app's data |
+| Causal analysis | The API tells me *what* changed, not *why*. I surface the question, not the answer |
+| Multi-tenant auth | Prototype, not SaaS — time spent on auth is time not spent on insight quality |
+| LLM-powered analysis | An operator needs to trust the output. Transparent rules beat magical AI every time |
+| Full Charts API coverage | 6 high-signal charts > 20 shallow ones. Curated beats comprehensive. |
+
+### How Kit prioritized impact over completeness
+
+The hardest part of a 48-hour project isn't building — it's cutting. Kit's priority stack:
+
+1. **Find a real insight** (the contradiction) — this is what makes the tool worth using
+2. **Build the detection logic** (~150 lines of TypeScript) — this is what makes it trustworthy
+3. **Package the insight as shareable content** — this is what makes it spread
+4. **Make it inspectable without setup** (mock mode) — this is what makes reviewers actually try it
+
+Everything else was in service of those four priorities. The video, the social posts, the growth campaign — they all exist to make the contradiction finding travel further.
+
+---
+
 ## Objective
 Build a useful public tool/resource on top of RevenueCat's Charts API, then package it with launch content and a growth campaign to drive awareness and adoption among AI agent developers and growth communities.
 

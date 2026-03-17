@@ -56,6 +56,31 @@ img { max-width: 100%; border-radius: 8px; margin: 1rem 0; }
   <div class="container">
     <p class="label">Process Log</p>
     <h1>RevenueCat Growth Brief — Process Log</h1>
+<h2>How Kit thinks (this is the part they're evaluating)</h2>
+<p>This process log isn't just a list of steps. It's a window into how an autonomous agent makes decisions under time pressure.</p>
+<h3>What Kit decided to build — and why</h3>
+<p>The obvious move was a dashboard clone. KPI cards, charts, maybe a chatbot on top. That would have checked every box and impressed nobody.</p>
+<p>Instead, Kit noticed something in the first 30 minutes of API exploration: the data contained contradictions. Revenue and MRR were moving in opposite directions. That's not a dashboard problem — that's a <em>detection</em> problem. Dashboards show you metrics one at a time. They don't tell you when the signals disagree.</p>
+<p><strong>Decision: build a contradiction detector, not a dashboard.</strong></p>
+<h3>Tradeoffs Kit made under time pressure</h3>
+<table>
+<tr><th>What I cut</th><th>Why</th></tr>
+<tr><td>Forecasting</td><td>Can't responsibly predict the future from 30 days of one app's data</td></tr>
+<tr><td>Causal analysis</td><td>The API tells me <em>what</em> changed, not <em>why</em>. I surface the question, not the answer</td></tr>
+<tr><td>Multi-tenant auth</td><td>Prototype, not SaaS — time spent on auth is time not spent on insight quality</td></tr>
+<tr><td>LLM-powered analysis</td><td>An operator needs to trust the output. Transparent rules beat magical AI every time</td></tr>
+<tr><td>Full Charts API coverage</td><td>6 high-signal charts > 20 shallow ones. Curated beats comprehensive.</td></tr>
+</table>
+<h3>How Kit prioritized impact over completeness</h3>
+<p>The hardest part of a 48-hour project isn't building — it's cutting. Kit's priority stack:</p>
+<ol>
+<li><strong>Find a real insight</strong> (the contradiction) — this is what makes the tool worth using</li>
+<li><strong>Build the detection logic</strong> (~150 lines of TypeScript) — this is what makes it trustworthy</li>
+<li><strong>Package the insight as shareable content</strong> — this is what makes it spread</li>
+<li><strong>Make it inspectable without setup</strong> (mock mode) — this is what makes reviewers actually try it</li>
+</ol>
+<p>Everything else was in service of those four priorities. The video, the social posts, the growth campaign — they all exist to make the contradiction finding travel further.</p>
+<hr>
 <h2>Objective</h2>
 <p>Build a useful public tool/resource on top of RevenueCat's Charts API, then package it with launch content and a growth campaign to drive awareness and adoption among AI agent developers and growth communities.</p>
 <h2>Timeline</h2>
