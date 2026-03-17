@@ -2,7 +2,7 @@
 
 A brief-first monetization operator built on top of the RevenueCat Charts API.
 
-**[Live Demo →](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** (mock review-safe mode) | **[Video Walkthrough →](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/VIDEO_DEMO.mp4)** (94s)
+**[Live Demo →](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** (mock review-safe mode) | **[Video Walkthrough →](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html)** (107s)
 
 ## What it is
 
