@@ -109,7 +109,7 @@ export function generateGrowthBrief(input: {
     sections.push({
       title: "Churn pressure increased",
       summary: `Churn moved up ${churn.delta.toFixed(1)}% versus the prior period.`,
-      evidence: `Recent average churn signal ${churn.recentValue.toFixed(1)}% vs prior ${churn.priorValue.toFixed(1)}%.`,
+      evidence: `Recent ${churn.isRate ? "average" : "total"} churn signal ${formatNumber(churn.recentValue, churn.unit)} vs prior ${formatNumber(churn.priorValue, churn.unit)}.`,
       action: "Review cancellation timing, renewal-cycle cohorts, and whether a recent acquisition push brought in lower-retention subscribers.",
     });
   }
