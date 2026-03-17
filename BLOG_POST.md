@@ -252,6 +252,37 @@ Because those features would have made the app feel bigger, but not smarter.
 
 For a time-boxed build and for an honest product thesis, the stronger move was to be selective and high-trust.
 
+
+## Sample operator brief from live data
+
+Here is an example of what the prototype actually surfaced from the Dark Noise project data:
+
+**Revenue momentum improved**
+Revenue increased roughly 14.7% versus the prior comparison window. Recent period revenue ~$1,453 vs prior ~$1,267.
+*Investigate next:* Check which product duration, offering, or acquisition segment contributed most.
+
+**Trial volume grew faster than conversion quality**
+Trial starts increased roughly 14.7%, while conversion rate signals did not improve alongside.
+*Investigate next:* Treat this as a traffic-quality or paywall-fit investigation.
+
+**MRR slightly declined despite revenue lift**
+MRR moved roughly -3.0% while short-term revenue improved. This can indicate that one-time or non-recurring revenue (annual renewals, lifetime purchases) drove the revenue lift without proportional recurring improvement.
+*Investigate next:* Check product duration mix and whether the revenue lift came from annual renewals rather than new monthly subscriptions.
+
+This is exactly the kind of multi-signal pattern that makes a brief-first product more useful than raw charts: the operator sees the contradiction immediately instead of discovering it by clicking between three different dashboard screens.
+
+## Limitations
+
+This prototype is honest about what it does and does not do:
+
+- **Rate metrics are compared using windowed averages**, not weighted cohort analysis. This is a reasonable heuristic signal for a weekly cadence, not a precise statistical claim.
+- **No causal inference.** The brief identifies what changed and suggests where to investigate, but it does not claim to know why.
+- **No forecasting.** Predictions require modeling assumptions this prototype intentionally avoids.
+- **No experiment attribution.** A/B test readouts require experiment metadata the Charts API does not provide.
+- **Limited to the curated chart set.** The prototype uses 6 high-signal charts, not the full Charts API surface.
+
+These constraints are deliberate. A trustworthy operator tool should say less with more confidence, not more with less.
+
 ## Where this could go next
 
 If I kept building this, the next features would be:
