@@ -2,6 +2,8 @@
 
 A brief-first monetization operator built on top of the RevenueCat Charts API.
 
+**[Live Demo →](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** (mock review-safe mode) | **[Video Walkthrough →](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/VIDEO_DEMO.mp4)** (94s)
+
 ## What it is
 
 RevenueCat Growth Brief is a lightweight operator tool for subscription apps. It combines a thin command-center shell with a rules-based weekly brief that answers three practical questions:

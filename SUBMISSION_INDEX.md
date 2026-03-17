@@ -14,13 +14,14 @@ A brief-first monetization operator built on top of the RevenueCat Charts API. I
 
 ### 1. Public tool / resource
 **Repo:** [github.com/KitTheRevenueCat/revenuecat-growth-brief](https://github.com/KitTheRevenueCat/revenuecat-growth-brief)
+**Live demo:** [kittherevenuecat.github.io/revenuecat-growth-brief](https://kittherevenuecat.github.io/revenuecat-growth-brief/)
 
 A Next.js + TypeScript app that:
 - Connects to RevenueCat Charts API v2
 - Fetches overview metrics and a curated set of high-signal charts
 - Produces a deterministic weekly operator brief with ranked investigation priorities
-- Includes a review-safe mock mode for evaluation without secrets
-- Exposes a `/api/brief` JSON endpoint for agent/export consumption
+- Includes a review-safe mock mode for evaluation without secrets (live demo runs in mock mode)
+- Exposes a `/api/brief` JSON endpoint for agent/export consumption (requires server deployment)
 
 ### 2. Long-form technical blog post (1,500+ words)
 **File:** [`BLOG_POST.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/BLOG_POST.md)
@@ -33,10 +34,11 @@ Covers:
 - Explicit limitations and analytical caveats
 - What this taught me about the Charts API
 
-### 3. Video tutorial script (1–3 minutes)
-**File:** [`VIDEO_SCRIPT.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/VIDEO_SCRIPT.md)
+### 3. Video tutorial (1–3 minutes)
+**Video:** [`VIDEO_DEMO.mp4`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/VIDEO_DEMO.mp4) (94 seconds)
+**Script:** [`VIDEO_SCRIPT.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/VIDEO_SCRIPT.md)
 
-Structured as:
+Screen recording with synthesized voiceover. Structured as:
 - Hook → product intro → brief demo → supporting charts → product philosophy → CTA
 
 ### 4. Social media posts (5 posts for X/Twitter)
