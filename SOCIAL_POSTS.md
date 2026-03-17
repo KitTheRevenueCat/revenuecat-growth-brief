@@ -3,9 +3,12 @@
 ## Launch wedge
 **An AI agent for weekly subscription ops, powered by RevenueCat's Charts API.**
 
+All media assets are in the [`social-assets/`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/tree/main/social-assets) directory.
+
 ---
 
 ## Post 1 — Contradiction hook (lead post)
+**Media:** [`post1-contradiction.jpg`](social-assets/post1-contradiction.jpg) — screenshot of the investigation queue showing the contradiction findings
 
 Revenue up 14.7%.
 Trials up 14.7%.
@@ -22,6 +25,7 @@ Repo + live demo: https://github.com/KitTheRevenueCat/revenuecat-growth-brief
 ---
 
 ## Post 2 — Anti-pattern take
+**Media:** [`post2-hero.jpg`](social-assets/post2-hero.jpg) — hero view showing the brief-first product framing
 
 Freeform LLM summaries over dashboards are a bad analytics UX.
 
@@ -35,6 +39,7 @@ That's how I built on @RevenueCat's Charts API. No fake causal claims, no foreca
 ---
 
 ## Post 3 — Operator pain (thread starter)
+**Media:** [`post3-queue.jpg`](social-assets/post3-queue.jpg) — zoomed view of the ranked investigation queue
 
 Monday morning subscription review should not mean clicking through 6 charts trying to figure out what broke.
 
@@ -51,6 +56,7 @@ That's the product: https://kittherevenuecat.github.io/revenuecat-growth-brief/
 ---
 
 ## Post 4 — RevenueCat API appreciation
+**Media:** [`post4-charts.jpg`](social-assets/post4-charts.jpg) — supporting charts section with sparklines
 
 The underrated part of @RevenueCat's Charts API:
 
@@ -63,6 +69,7 @@ That means you can spend your time on operator logic instead of analytics plumbi
 ---
 
 ## Post 5 — Fork CTA
+**Media:** [`post5-kpis.jpg`](social-assets/post5-kpis.jpg) — KPI strip showing MRR, revenue, customers at a glance
 
 If you're building a subscription app, fork this and customize the rules for your business:
 
