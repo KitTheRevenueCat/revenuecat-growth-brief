@@ -62,20 +62,43 @@ This wedge is more novel and specific than "brief-first monetization operator" a
 - **What:** Builder-style post: "I used RevenueCat's Charts API to build a weekly monetization brief"
 - **Disclosure:** explicit agent disclosure in post body
 
-### 4. Reddit (selective)
-- **Targets:** r/SaaS, r/SideProject
-- **Account:** operator-approved account with agent disclosure
-- **What:** Only if copy is community-fit. Lead with problem, not repo link.
-- **Disclosure:** explicit agent disclosure
+### 4. AI builder Discords (selective)
+- **Targets:** Latent Space Discord, AI Engineer Foundation, Buildspace
+- **Account:** KitTheRevenueCat (agent-disclosed)
+- **What:** Share in #show-and-tell or #projects channels. Frame as "agent-built tool on RevenueCat API" — this is inherently interesting to AI builders because the builder is an agent, not just the product.
+- **Disclosure:** explicit agent disclosure in post
 
 ## Budget allocation ($100)
 
 | Spend | Amount | Purpose |
 |-------|--------|---------|
-| X post boost | $50 | Boost best-performing launch post to founder/indie/agent-builder audience |
-| Newsletter/community seeding | $30 | Sponsor placement in one niche founder or AI-builder newsletter |
-| Video/creative polish | $15 | Captions, thumbnail, short-form clip |
-| Link tracking + contingency | $5 | UTM setup, analytics |
+| Design polish: demo screenshot + OG image | $25 | One compelling visual asset for social/community CTR — screenshot of the contradiction finding with annotation |
+| Video captioning + 30s cutdown clip | $25 | Captions for accessibility, plus a 30-second highlight reel for X/Discord embeds |
+| Micro-creator placement | $35 | Sponsor one post in a niche indie/AI newsletter (targets: Indie Hackers newsletter, The Pragmatic Engineer, or Ben's Bites sidebar — whichever accepts $35 for a single mention) |
+| Contingency: boost only after organic proof | $15 | Hold for paid amplification only after one organic post proves traction (>50 engagements) |
+
+**Principle:** spend nothing on paid amplification until organic performance validates the creative. The $15 contingency only gets spent if a post earns attention on its own first.
+
+## Direct outreach plan (10 people)
+
+In addition to community posts, directly share the project with 10 specific people who are likely to find it genuinely interesting:
+
+1. **3–4 indie mobile founders** who have publicly discussed RevenueCat or subscription analytics pain (find via X search for "RevenueCat dashboard" or "subscription metrics")
+2. **2–3 AI agent builders** who have shipped agent-analytics projects or discussed structured data feeds for agents
+3. **2–3 DevRel/growth practitioners** who write about developer tooling or subscription growth
+
+Each DM is personalized: "Built this on RevenueCat's Charts API — thought you'd find the approach interesting given [specific thing they've posted about]. No ask, just sharing."
+
+This is not spam. It is targeted sharing with people who would genuinely benefit from seeing the project.
+
+## Per-community angle customization
+
+| Community | Lead angle | What NOT to do |
+|-----------|-----------|----------------|
+| X | Contradiction hook + real numbers | Don't lead with "I built a thing" |
+| RevenueCat Community | "Here's a practical Charts API use case with implementation learnings" | Don't pitch — teach |
+| Indie Hackers | "What I learned building on RevenueCat's API in 48 hours" — builder story | Don't post as a launch; post as a build log |
+| AI builder Discords | "An AI agent built this operator tool — here's the pattern for structured analytics" | Don't oversell the AI angle; focus on the deterministic design choice |
 
 ## Measurement plan
 

@@ -170,20 +170,119 @@ const res = await fetch(`https://api.revenuecat.com/v2/projects/${projectId}/cha
 });
 ```
 
-A representative response includes:
-- chart metadata
-- measure definitions
-- time-series values
-- summary totals/averages
-- selectors like `revenue_type`
+### What the chart payload actually looks like
 
-For example, the live chart output I captured for this project included fields like:
-- `display_name: "Revenue"`
-- `resolution: "day"`
-- `summary.total.Revenue`
-- `values[]` entries with `cohort`, `measure`, `value`, and `incomplete`
+Here is the shape you get back from a chart endpoint (simplified from the live Dark Noise response):
+
+```json
+{
+  "display_name": "Revenue",
+  "resolution": "day",
+  "measures": [
+    {
+      "display_name": "Revenue",
+      "unit": "$",
+      "decimal_precision": 2,
+      "chartable": true
+    }
+  ],
+  "values": [
+    { "cohort": 0, "measure": 0, "value": 187.99, "incomplete": false },
+    { "cohort": 1, "measure": 0, "value": 203.44, "incomplete": false },
+    { "cohort": 2, "measure": 0, "value": 195.12, "incomplete": false }
+  ],
+  "summary": {
+    "total": { "Revenue": 1452.76 }
+  }
+}
+```
+
+Key things to know:
+- `cohort` is the time bucket index (0 = oldest in window)
+- `measure` maps to the index in the `measures` array
+- `incomplete` flags partial-day data points you should filter out
+- `unit` tells you whether it is `$`, `%`, or `#` (count) — and this matters for how you compare windows
+
+### How the brief engine transforms this
+
+The core transformation is a window comparison. Extract the last N data points, compare against the prior N:
+
+```ts
+function compareRecent(chart: ChartResponse, measureName?: string, size = 7) {
+  const series = chart.values
+    .filter((v) => v.measure === 0 && !v.incomplete)
+    .sort((a, b) => a.cohort - b.cohort);
+
+  const recent = series.slice(-size);
+  const prior = series.slice(-(size * 2), -size);
+
+  const unit = chart.measures[0]?.unit || "#";
+  const isRate = unit === "%";
+
+  // This is the critical distinction:
+  // counts and dollars → sum the window
+  // rates (churn %, conversion %) → average the window
+  const reduceWindow = (points: { value: number }[]) => {
+    if (!points.length) return 0;
+    if (isRate) return points.reduce((s, p) => s + p.value, 0) / points.length;
+    return points.reduce((s, p) => s + p.value, 0);
+  };
+
+  const recentValue = reduceWindow(recent);
+  const priorValue = reduceWindow(prior);
+  const delta = priorValue === 0 ? 0 : ((recentValue - priorValue) / priorValue) * 100;
+
+  return { recentValue, priorValue, delta, isRate, unit };
+}
+```
+
+### Why rate metrics need special handling
+
+This is a gotcha worth calling out explicitly.
+
+If churn is 2.1% on Monday, 2.3% on Tuesday, and 1.9% on Wednesday, the weekly churn signal is **not** 6.3%. It is an average: ~2.1%.
+
+Summing rate metrics makes them look dramatically larger than they are. The prototype caught this during a review pass — the first version summed everything, which produced nonsensical churn deltas of 50%+ that were really just seven daily rates stacked on top of each other.
+
+The fix: check the `unit` field from the chart's measures. If it is `%`, average. If it is `$` or `#`, sum. This is a small detail that makes the difference between a trustworthy brief and a misleading one.
+
+### Detecting contradictions
+
+The most useful thing the brief engine does is cross-metric contradiction detection. This is where operator value comes from — surfacing signals that require looking at two charts simultaneously:
+
+```ts
+// Example: trials growing but conversion falling
+if (trials.delta > 5 && conversion.delta < -5) {
+  sections.push({
+    title: "Acquisition quality check",
+    summary: "Trial volume increased, but conversion quality fell.",
+    action: "Investigate paywall fit: review offer mix, price anchoring, " +
+            "and whether channel mix shifted toward lower-intent traffic.",
+  });
+}
+
+// Example: customers growing but revenue not following
+if (customers.delta > 5 && revenue.delta <= 0) {
+  sections.push({
+    title: "Revenue quality check",
+    summary: "Customer growth improved without a matching revenue lift.",
+    action: "Check product mix and whether lower-priced or trial-heavy " +
+            "acquisition is diluting monetization quality.",
+  });
+}
+```
+
+These rules are intentionally simple and transparent. An operator can read the code and know exactly why the brief flagged something. That is the design goal: deterministic, auditable, trustworthy.
 
 That structure is exactly what makes the brief-first approach viable: RevenueCat already gives you normalized subscription metrics, so you can spend your time on operator logic instead of reconstructing analytics primitives from raw events.
+
+## 3 mistakes I avoided building on the Charts API
+
+1. **Don't sum rate metrics.** The `unit` field tells you whether a chart tracks counts, dollars, or percentages. Summing daily churn rates makes them look 7x larger than reality. Average them instead.
+
+2. **Don't ignore `incomplete` data points.** The most recent time bucket is often partial. If you include it in your comparison window, your "latest period" will always look artificially low. Filter `incomplete: true` before comparing.
+
+3. **Don't overclaim causality.** The Charts API gives you strong directional signals — what moved, by how much. It does not give you experiment metadata, attribution data, or counterfactuals. The honest move is to surface what changed and suggest where to investigate, not to claim you know why it changed.
 
 ## What this taught me about the Charts API
 
