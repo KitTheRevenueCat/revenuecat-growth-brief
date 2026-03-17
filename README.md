@@ -90,3 +90,34 @@ The brief generator intentionally stays conservative:
 - add one controlled segmentation workflow
 - add chart drill-down links
 - support a small library of operator templates (growth, retention, pricing mix)
+
+
+## Why this is not just another dashboard
+
+RevenueCat already has charts. The problem this project addresses is the operator workflow around those charts:
+
+- what changed this week?
+- what deserves attention first?
+- what should I investigate next?
+
+This is why the product is brief-first. The dashboard shell exists to support the weekly operating brief, not the other way around.
+
+## Current operator workflow
+
+1. Load overview metrics and a curated set of high-signal charts
+2. Compare the latest 7 data points against the prior 7
+3. Detect notable movement and cross-metric contradictions
+4. Produce a ranked investigation queue
+5. Support that queue with evidence charts
+
+## Intentional tradeoffs
+
+What this prototype intentionally does **not** do:
+
+- claim causal inference
+- forecast outcomes
+- run experiment analysis
+- rebuild every RevenueCat chart
+- pretend weak signals are strong signals
+
+That constraint discipline is part of the product thesis.

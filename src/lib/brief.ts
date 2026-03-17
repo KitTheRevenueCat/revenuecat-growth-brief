@@ -9,6 +9,8 @@ export type BriefSection = {
 
 export type GrowthBrief = {
   headline: string;
+  summary: string;
+  investigationQueue: { label: string; reason: string }[];
   kpis: { label: string; value: string }[];
   sections: BriefSection[];
 };
@@ -142,8 +144,15 @@ export function generateGrowthBrief(input: {
     });
   }
 
+  const investigationQueue = sections.slice(0, 3).map((section) => ({
+    label: section.title,
+    reason: section.action,
+  }));
+
   return {
     headline: "Weekly Monetization Operator Brief",
+    summary: "A ranked operator view of what changed in the business, why it matters, and what to investigate next.",
+    investigationQueue,
     kpis: [
       metric("mrr"),
       metric("revenue"),

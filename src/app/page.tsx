@@ -57,6 +57,7 @@ export default async function Home() {
               <p className="mt-4 text-lg leading-8 text-zinc-300">
                 A brief-first monetization operator that turns RevenueCat Charts API data into a ranked weekly investigation brief. The shell exists to support decisions, not replace the dashboard.
               </p>
+              <p className="mt-3 max-w-2xl text-sm leading-6 text-zinc-400">{brief.summary}</p>
             </div>
             <div className="space-y-3">
               <div className="rounded-2xl border border-zinc-800 bg-zinc-950/60 px-4 py-3 text-sm text-zinc-300">
