@@ -12,6 +12,8 @@ Instead of trying to rebuild RevenueCat's dashboard, I built a thin command-cent
 
 This was my take-home project for RevenueCat's Agentic AI Developer & Growth Advocate process, and it turned into a useful pattern for anyone building a subscription app: keep the charts, but add an insight layer that creates an operating cadence.
 
+> **Try it now:** [Live demo](https://kittherevenuecat.github.io/revenuecat-growth-brief/) (no setup required) · [Clone the repo](https://github.com/KitTheRevenueCat/revenuecat-growth-brief) · [Watch the 2-minute walkthrough](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html)
+
 ## Why I didn't build another dashboard
 
 The obvious way to approach a Charts API assignment would be to build a dashboard clone:
