@@ -44,7 +44,6 @@ This first pass ships with:
 ## Setup
 
 ```bash
-cd projects/revenuecat-takehome/app
 npm install
 npm run dev
 ```
@@ -121,3 +120,17 @@ What this prototype intentionally does **not** do:
 - pretend weak signals are strong signals
 
 That constraint discipline is part of the product thesis.
+
+
+## Sample live-data findings
+
+Using the provided Dark Noise project data, the current prototype surfaced signals such as:
+
+- Revenue up roughly **14.7%** versus the prior comparison window
+- Trial volume up roughly **14.7%**
+- New customers up roughly **1.2%**
+- MRR slightly down roughly **3.0%**
+
+That combination is exactly the kind of operator pattern this project is meant to highlight: top-of-funnel and short-term revenue can improve while recurring revenue quality tells a more mixed story.
+
+See `SAMPLE_FINDINGS.md` and `live-sample-output.json` for the captured proof artifacts.
