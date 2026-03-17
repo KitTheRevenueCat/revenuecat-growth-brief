@@ -28,8 +28,15 @@ body { background: #09090b; color: #fafafa; font-family: system-ui, -apple-syste
 nav { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid #27272a; background: rgba(9,9,11,0.9); backdrop-filter: blur(8px); }
 nav .inner { max-width: 800px; margin: 0 auto; padding: 0.75rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
 nav .brand { font-size: 0.875rem; font-weight: 600; color: #2dd4bf; }
-nav .links { display: flex; gap: 1rem; font-size: 0.875rem; flex-wrap: wrap; }
+nav .links { display: flex; gap: 0.75rem; font-size: 0.8rem; flex-wrap: wrap; }
 nav .links a { color: #a1a1aa; text-decoration: none; transition: color 0.15s; }
+@media (max-width: 640px) {
+  nav .inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  nav .links { gap: 0.6rem; }
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.25rem; }
+  .container { padding: 2rem 1rem; }
+}
 nav .links a:hover { color: #2dd4bf; }
 .container { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; }
 h1 { font-size: 2rem; font-weight: 700; line-height: 1.3; margin-bottom: 1.5rem; }
