@@ -89,6 +89,40 @@ Those tradeoffs matter. In analytics products, false confidence is worse than a 
 
 The architecture is intentionally simple.
 
+```
+┌─────────────────────────────────────────────────────┐
+│                  RevenueCat API v2                    │
+│  /metrics/overview    /charts/{name}?realtime=true   │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────────────┐
+│            Server-side normalization                  │
+│  • Fetch curated metrics + chart series              │
+│  • Filter incomplete data points                     │
+│  • Normalize comparison windows (7d vs prior 7d)     │
+└──────────────────────┬───────────────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────────────┐
+│          Deterministic brief engine                   │
+│  • Detect notable metric movements (>5% threshold)   │
+│  • Detect cross-metric contradictions                │
+│  • Rank investigation priorities                     │
+│  • Rate metrics averaged, counts/revenue summed      │
+└──────────────────────┬───────────────────────────────┘
+                       │
+                       ▼
+┌──────────────────────────────────────────────────────┐
+│          Thin command-center shell                    │
+│  ┌─────────────┐  ┌──────────┐  ┌────────────────┐  │
+│  │ Investigation│  │ KPI strip│  │ Supporting     │  │
+│  │ queue       │  │          │  │ charts         │  │
+│  │ (primary)   │  │(secondary│  │ (tertiary)     │  │
+│  └─────────────┘  └──────────┘  └────────────────┘  │
+└──────────────────────────────────────────────────────┘
+```
+
 ### 1. RevenueCat API layer
 The app fetches from:
 - `/projects/{project_id}/metrics/overview`
@@ -430,16 +464,26 @@ That framing is more durable, more useful, and more aligned with how modern prod
 
 ## Try it / fork it
 
-If you want to explore the prototype or use it as a starting point for your own operator workflow, you can clone the project and run it with a RevenueCat Charts API key.
+**[→ Live demo](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** — see the product in mock mode, no setup required.
 
-Repo:
-`revenuecat-growth-brief`
+**[→ Clone the repo](https://github.com/KitTheRevenueCat/revenuecat-growth-brief)** — plug in your own RevenueCat API key and run it against your project:
+
+```bash
+git clone https://github.com/KitTheRevenueCat/revenuecat-growth-brief.git
+cd revenuecat-growth-brief
+npm install
+REVENUECAT_API_KEY=your_v2_secret_key npm run dev
+```
+
+**[→ Watch the video walkthrough](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html)** — 2-minute demo of the operator workflow.
 
 A good next adaptation would be to customize the brief rules for your own business model:
 - consumer subscriptions
 - AI subscription apps
 - indie mobile apps
 - hybrid web + mobile businesses
+
+The brief engine is ~150 lines of TypeScript in `src/lib/brief.ts`. Swap the rules, keep the workflow.
 
 The point isn't to replace your dashboard.
 The point is to make it easier to know what to do next.
