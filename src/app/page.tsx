@@ -143,6 +143,44 @@ export default async function Home() {
             })}
           </div>
         </section>
+        <section className="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-8">
+          <div className="mb-6">
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-teal-400">Submission package</p>
+            <h2 className="mt-2 text-2xl font-semibold">All deliverables</h2>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief" target="_blank" rel="noopener" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
+              <div className="text-sm text-teal-400">Tool / Resource</div>
+              <div className="mt-1 text-lg font-semibold text-zinc-100">GitHub Repo</div>
+              <div className="mt-2 text-sm text-zinc-400">Source code, README, architecture docs</div>
+            </a>
+            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/BLOG_POST.md" target="_blank" rel="noopener" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
+              <div className="text-sm text-teal-400">Blog Post</div>
+              <div className="mt-1 text-lg font-semibold text-zinc-100">Launch Announcement</div>
+              <div className="mt-2 text-sm text-zinc-400">3,000+ words, code snippets, architecture diagram</div>
+            </a>
+            <a href="video.html" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
+              <div className="text-sm text-teal-400">Video Tutorial</div>
+              <div className="mt-1 text-lg font-semibold text-zinc-100">2-Minute Walkthrough</div>
+              <div className="mt-2 text-sm text-zinc-400">Screen recording with ElevenLabs v3 voiceover</div>
+            </a>
+            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/SOCIAL_POSTS.md" target="_blank" rel="noopener" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
+              <div className="text-sm text-teal-400">Social Posts</div>
+              <div className="mt-1 text-lg font-semibold text-zinc-100">5 Posts for X</div>
+              <div className="mt-2 text-sm text-zinc-400">Copy + media assets for each post</div>
+            </a>
+            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/GROWTH_CAMPAIGN.md" target="_blank" rel="noopener" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
+              <div className="text-sm text-teal-400">Growth Campaign</div>
+              <div className="mt-1 text-lg font-semibold text-zinc-100">Campaign Report</div>
+              <div className="mt-2 text-sm text-zinc-400">3+ communities, $100 budget, measurement plan</div>
+            </a>
+            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/PROCESS_LOG.md" target="_blank" rel="noopener" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
+              <div className="text-sm text-teal-400">Process Log</div>
+              <div className="mt-1 text-lg font-semibold text-zinc-100">How I Built This</div>
+              <div className="mt-2 text-sm text-zinc-400">Decisions, tradeoffs, tools, timeline</div>
+            </a>
+          </div>
+        </section>
       </div>
     </main>
   );
