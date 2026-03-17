@@ -147,6 +147,60 @@ The charts are there to back the brief, not overwhelm the operator.
 
 That ordering is intentional.
 
+
+## Real API example
+
+Here is the exact pattern the prototype uses to fetch project-level overview metrics from RevenueCat API v2:
+
+```ts
+const res = await fetch(`https://api.revenuecat.com/v2/projects/${projectId}/metrics/overview`, {
+  headers: {
+    Authorization: `Bearer ${process.env.REVENUECAT_API_KEY}`,
+  },
+});
+```
+
+And for a chart:
+
+```ts
+const res = await fetch(`https://api.revenuecat.com/v2/projects/${projectId}/charts/revenue?realtime=true`, {
+  headers: {
+    Authorization: `Bearer ${process.env.REVENUECAT_API_KEY}`,
+  },
+});
+```
+
+A representative response includes:
+- chart metadata
+- measure definitions
+- time-series values
+- summary totals/averages
+- selectors like `revenue_type`
+
+For example, the live chart output I captured for this project included fields like:
+- `display_name: "Revenue"`
+- `resolution: "day"`
+- `summary.total.Revenue`
+- `values[]` entries with `cohort`, `measure`, `value`, and `incomplete`
+
+That structure is exactly what makes the brief-first approach viable: RevenueCat already gives you normalized subscription metrics, so you can spend your time on operator logic instead of reconstructing analytics primitives from raw events.
+
+## What this taught me about the Charts API
+
+A few practical observations from building on it:
+
+1. **Overview metrics are a fast way to establish business context**
+   The overview endpoint is ideal for headline KPIs like MRR, revenue, active subscriptions, and new customers.
+
+2. **Named chart endpoints are strong enough for a real operator workflow**
+   Revenue, MRR, trial conversion, churn, trials, and customer growth are enough to build a useful weekly cadence product without inventing extra analytics.
+
+3. **Rate metrics need careful handling**
+   For counts and revenue, summing a comparison window makes sense. For rates like churn and conversion, the safer prototype treatment is a windowed average signal, not a summed total.
+
+4. **The API is better for operator tooling than for fake AI analysis**
+   The structure is strong for chart-backed reporting, ranking investigations, and recurring brief generation. It is not a license to overclaim causality or prediction.
+
 ## Why this is useful to real subscription teams
 
 Most teams don't need another place to stare at charts. They need a repeatable way to run the business.
