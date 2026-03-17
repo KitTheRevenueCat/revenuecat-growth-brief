@@ -61,14 +61,14 @@ FULL_SCRIPT = (
 # Scene images in order
 SCENE_IMAGES = [f"scene{i}_v3.jpg" for i in range(1, 7)]
 
-# Approximate scene proportions (based on text length)
-# Scene 1: contradiction hook (~15%)
-# Scene 2: product intro (~20%)
-# Scene 3: investigation queue (~20%)
-# Scene 4: KPIs + charts (~20%)
-# Scene 5: philosophy (~15%)
-# Scene 6: CTA (~10%)
-SCENE_WEIGHTS = [0.14, 0.18, 0.19, 0.20, 0.18, 0.11]
+# Scene proportions — tuned to match voiceover content
+# Scene 1: contradiction hook (0-15s)
+# Scene 2: product intro (15-35s) 
+# Scene 3: investigation queue (35-55s)
+# Scene 4: KPIs + "below the brief" charts (55-75s) — scroll to charts when narration says "below"
+# Scene 5: philosophy + deterministic (75-100s)
+# Scene 6: CTA (100-113s)
+SCENE_WEIGHTS = [0.13, 0.17, 0.18, 0.18, 0.22, 0.12]
 
 
 def generate_voiceover():
