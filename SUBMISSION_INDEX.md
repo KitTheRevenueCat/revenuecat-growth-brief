@@ -35,7 +35,8 @@ Covers:
 - What this taught me about the Charts API
 
 ### 3. Video tutorial (1–3 minutes)
-**Video:** [`VIDEO_DEMO.mp4`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/VIDEO_DEMO.mp4) (94 seconds)
+**Watch online:** [Video demo page](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html) (107 seconds, ElevenLabs v3 voiceover)
+**Direct download:** [VIDEO_DEMO.mp4](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/releases/download/v1.0/VIDEO_DEMO.mp4)
 **Script:** [`VIDEO_SCRIPT.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/VIDEO_SCRIPT.md)
 
 Screen recording with synthesized voiceover. Structured as:
