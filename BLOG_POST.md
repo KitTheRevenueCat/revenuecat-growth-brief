@@ -360,15 +360,17 @@ Here is an example of what the prototype actually surfaced from the Dark Noise p
 Revenue increased roughly 14.7% versus the prior comparison window. Recent period revenue ~$1,453 vs prior ~$1,267.
 *Investigate next:* Check which product duration, offering, or acquisition segment contributed most.
 
-**Trial volume grew faster than conversion quality**
-Trial starts increased roughly 14.7%, while conversion rate signals did not improve alongside.
-*Investigate next:* Treat this as a traffic-quality or paywall-fit investigation.
-
 **MRR slightly declined despite revenue lift**
 MRR moved roughly -3.0% while short-term revenue improved. This can indicate that one-time or non-recurring revenue (annual renewals, lifetime purchases) drove the revenue lift without proportional recurring improvement.
 *Investigate next:* Check product duration mix and whether the revenue lift came from annual renewals rather than new monthly subscriptions.
 
+**Trial volume grew but conversion was flat**
+Trial starts increased roughly 14.7% (436 vs 380), while trial conversion rate showed no activity in this window (Dark Noise appears to have a stable subscriber base with limited active trial-to-paid flow during this period).
+*Investigate next:* Check whether trial growth is coming from new channels or product changes, and whether conversion will follow with a lag.
+
 This is exactly the kind of multi-signal pattern that makes a brief-first product more useful than raw charts: the operator sees the contradiction immediately instead of discovering it by clicking between three different dashboard screens.
+
+> **A note on live vs. mock data:** The live demo runs in mock mode with synthetic data that demonstrates the full range of brief findings. The real Dark Noise data above shows a quieter but still instructive pattern. Both modes are documented in the repo.
 
 ## Limitations
 
