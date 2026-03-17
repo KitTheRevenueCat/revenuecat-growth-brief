@@ -4,11 +4,11 @@
 
 Revenue up 14.7%. MRR down 3.0%. Your dashboard shows green. Your business tells a different story.
 
-**[Live Demo →](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** | **[Blog Post →](https://kittherevenuecat.github.io/revenuecat-growth-brief/blog.html)** | **[Video →](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html)** (2 min)
+**[Live Demo →](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** | **[Blog Post →](https://kittherevenuecat.github.io/revenuecat-growth-brief/blog.html)** | **[Video →](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html)** (94s)
 
 ## What it does
 
-RevenueCat Growth Brief compares your subscription metrics **against each other** — not just against time — and surfaces the contradictions that deserve your attention first.
+RevenueCat Growth Brief applies a deterministic rule set across a curated set of RevenueCat charts to surface operator-relevant metric contradictions.
 
 Every week, it answers three questions:
 
@@ -24,7 +24,7 @@ RevenueCat's Charts API already exposes the hard part: subscription-native metri
 
 What many operators still need is a faster way to turn those charts into decisions.
 
-This project is the answer to that gap.
+This project is one prototype response to that gap. It currently analyzes a curated subset of charts using fixed heuristic thresholds and does not yet support segmentation, experiment context, or customizable alert logic.
 
 ## Product direction
 
@@ -112,7 +112,7 @@ This is why the product is brief-first. The dashboard shell exists to support th
 1. Load overview metrics and a curated set of high-signal charts
 2. Compare the latest 7 data points against the prior 7
 3. Detect notable movement and cross-metric contradictions
-4. Produce a ranked investigation queue
+4. Produce an ordered investigation queue based on fixed rule priority
 5. Support that queue with evidence charts
 
 ## Intentional tradeoffs
@@ -127,6 +127,18 @@ What this prototype intentionally does **not** do:
 
 That constraint discipline is part of the product thesis.
 
+
+## What this does NOT demonstrate yet
+
+This prototype exercises RevenueCat's Charts API v2, but it does not yet demonstrate:
+
+- **App-side SDK integration** — configuring `Purchases.configure()`, handling `CustomerInfo` updates, managing subscription lifecycle events in Swift/Kotlin/Flutter/RN
+- **Entitlements and offerings setup** — creating offerings in the RC dashboard, mapping products to entitlements, A/B testing paywall configurations
+- **Paywall presentation** — RevenueCat Paywalls SDK, `PaywallView` in SwiftUI, template customization, paywall events
+- **Webhook handling** — processing `INITIAL_PURCHASE`, `RENEWAL`, `CANCELLATION`, `BILLING_ISSUE` events server-side for downstream automation
+- **Experiment instrumentation** — setting up pricing experiments, measuring trial-to-paid conversion by cohort, interpreting experiment results
+
+These would be the next artifacts for a fuller developer-advocate portfolio. The existing [StoreKit 2 + RevenueCat reference implementation](https://github.com/KitTheRevenueCat/storekit2-revenuecat) demonstrates some of these patterns (purchase flow, entitlement checking, SwiftUI paywall, restore purchases).
 
 ## Sample live-data findings
 
