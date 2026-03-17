@@ -1,48 +1,88 @@
 # RevenueCat Charts API Take-Home Submission
 
-## Project
-**RevenueCat Growth Brief**
+## Kit — Agentic AI Developer & Growth Advocate candidate
 
-A brief-first monetization operator built on top of the RevenueCat Charts API.
+---
+
+## Project: RevenueCat Growth Brief
+
+A brief-first monetization operator built on top of the RevenueCat Charts API. Instead of rebuilding the dashboard, this project adds the missing operator workflow: a ranked weekly investigation brief that tells you what changed, why it matters, and what to investigate next.
+
+---
 
 ## Deliverables
 
 ### 1. Public tool / resource
-- Repo: https://github.com/KitTheRevenueCat/revenuecat-growth-brief
+**Repo:** [github.com/KitTheRevenueCat/revenuecat-growth-brief](https://github.com/KitTheRevenueCat/revenuecat-growth-brief)
 
-### 2. Long-form blog post
-- Draft: `BLOG_POST.md`
+A Next.js + TypeScript app that:
+- Connects to RevenueCat Charts API v2
+- Fetches overview metrics and a curated set of high-signal charts
+- Produces a deterministic weekly operator brief with ranked investigation priorities
+- Includes a review-safe mock mode for evaluation without secrets
+- Exposes a `/api/brief` JSON endpoint for agent/export consumption
 
-### 3. Video tutorial
-- Script: `VIDEO_SCRIPT.md`
+### 2. Long-form technical blog post (1,500+ words)
+**File:** [`BLOG_POST.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/BLOG_POST.md)
 
-### 4. 5 social posts
-- Copy pack: `SOCIAL_POSTS.md`
+Covers:
+- Product thesis and why this is not another dashboard clone
+- Real RevenueCat API walkthrough with endpoint examples
+- Architecture and implementation approach
+- Sample operator brief from live Dark Noise data
+- Explicit limitations and analytical caveats
+- What this taught me about the Charts API
+
+### 3. Video tutorial script (1–3 minutes)
+**File:** [`VIDEO_SCRIPT.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/VIDEO_SCRIPT.md)
+
+Structured as:
+- Hook → product intro → brief demo → supporting charts → product philosophy → CTA
+
+### 4. Social media posts (5 posts for X/Twitter)
+**File:** [`SOCIAL_POSTS.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/SOCIAL_POSTS.md)
+
+Each post highlights a different angle:
+1. Launch + proof (real data findings)
+2. Operator pain / why this matters
+3. Agent/dev technical angle
+4. RevenueCat-native subscription angle
+5. CTA / usage patterns
+
+Agent disclosure included in launch post.
 
 ### 5. Growth campaign report
-- Report: `GROWTH_CAMPAIGN.md`
+**File:** [`GROWTH_CAMPAIGN.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/GROWTH_CAMPAIGN.md)
+
+Includes:
+- Audience tiers ranked by fit
+- Day-by-day campaign sequence
+- At least 3 target communities with specific accounts and disclosure
+- $100 budget allocation with rationale
+- Measurement plan
 
 ### 6. Process log
-- Log: `PROCESS_LOG.md`
+**File:** [`PROCESS_LOG.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/PROCESS_LOG.md)
 
-## Supporting docs
-- Architecture: `ARCHITECTURE.md`
-- Build notes: `WORKLOG.md`
-- Launch post outline: `POST_OUTLINE.md`
+Details:
+- Research and API exploration steps
+- Concept selection with structured review rounds
+- Build sequence and review-driven corrections
+- Key decisions and tradeoffs
+- Tools used
 
-## Product summary
-RevenueCat Growth Brief is designed around a simple thesis:
+---
 
-RevenueCat already provides chart access. The missing layer for many teams is an operator workflow that turns chart data into a ranked weekly investigation brief.
+## Supporting documents
+- Architecture: [`ARCHITECTURE.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/ARCHITECTURE.md)
+- Sample live-data findings: [`SAMPLE_FINDINGS.md`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/SAMPLE_FINDINGS.md)
+- Live chart output snapshot: [`live-sample-output.json`](https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/live-sample-output.json)
 
-Instead of rebuilding a weaker dashboard clone, this project uses RevenueCat's Charts API to produce:
-- KPI visibility
-- operator-friendly findings
-- a ranked investigation queue
-- supporting evidence charts
+---
 
-## Core product principles
-- insight layer, not BI replacement
-- deterministic reasoning over speculative AI claims
-- brief-first UX
-- review-safe demo mode without secrets
+## Product principles
+- Insight layer, not BI replacement
+- Deterministic reasoning over speculative AI claims
+- Brief-first UX hierarchy
+- Review-safe demo mode without secrets
+- Honest limitations over false confidence
