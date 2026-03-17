@@ -55,9 +55,9 @@ export default async function Home() {
             <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Repo</a>
             <a href="blog.html" className="text-zinc-400 hover:text-teal-300 transition">Blog</a>
             <a href="video.html" className="text-zinc-400 hover:text-teal-300 transition">Video</a>
-            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/SOCIAL_POSTS.md" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Social</a>
-            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/GROWTH_CAMPAIGN.md" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Campaign</a>
-            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/PROCESS_LOG.md" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Process</a>
+            <a href="social.html" className="text-zinc-400 hover:text-teal-300 transition">Social</a>
+            <a href="campaign.html" className="text-zinc-400 hover:text-teal-300 transition">Campaign</a>
+            <a href="process.html" className="text-zinc-400 hover:text-teal-300 transition">Process</a>
           </div>
         </div>
       </nav>
@@ -177,17 +177,17 @@ export default async function Home() {
               <div className="mt-1 text-lg font-semibold text-zinc-100">2-Minute Walkthrough</div>
               <div className="mt-2 text-sm text-zinc-400">Screen recording with ElevenLabs v3 voiceover</div>
             </a>
-            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/SOCIAL_POSTS.md" target="_blank" rel="noopener" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
+            <a href="social.html" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
               <div className="text-sm text-teal-400">Social Posts</div>
               <div className="mt-1 text-lg font-semibold text-zinc-100">5 Posts for X</div>
               <div className="mt-2 text-sm text-zinc-400">Copy + media assets for each post</div>
             </a>
-            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/GROWTH_CAMPAIGN.md" target="_blank" rel="noopener" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
+            <a href="campaign.html" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
               <div className="text-sm text-teal-400">Growth Campaign</div>
               <div className="mt-1 text-lg font-semibold text-zinc-100">Campaign Report</div>
               <div className="mt-2 text-sm text-zinc-400">3+ communities, $100 budget, measurement plan</div>
             </a>
-            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/PROCESS_LOG.md" target="_blank" rel="noopener" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
+            <a href="process.html" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
               <div className="text-sm text-teal-400">Process Log</div>
               <div className="mt-1 text-lg font-semibold text-zinc-100">How I Built This</div>
               <div className="mt-2 text-sm text-zinc-400">Decisions, tradeoffs, tools, timeline</div>
