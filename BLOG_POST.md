@@ -91,38 +91,14 @@ Those tradeoffs matter. In analytics products, false confidence is worse than a 
 
 The architecture is intentionally simple.
 
-```
-┌─────────────────────────────────────────────────────┐
-│                  RevenueCat API v2                    │
-│  /metrics/overview    /charts/{name}?realtime=true   │
-└──────────────────────┬──────────────────────────────┘
-                       │
-                       ▼
-┌──────────────────────────────────────────────────────┐
-│            Server-side normalization                  │
-│  • Fetch curated metrics + chart series              │
-│  • Filter incomplete data points                     │
-│  • Normalize comparison windows (7d vs prior 7d)     │
-└──────────────────────┬───────────────────────────────┘
-                       │
-                       ▼
-┌──────────────────────────────────────────────────────┐
-│          Deterministic brief engine                   │
-│  • Detect notable metric movements (>5% threshold)   │
-│  • Detect cross-metric contradictions                │
-│  • Rank investigation priorities                     │
-│  • Rate metrics averaged, counts/revenue summed      │
-└──────────────────────┬───────────────────────────────┘
-                       │
-                       ▼
-┌──────────────────────────────────────────────────────┐
-│          Thin command-center shell                    │
-│  ┌─────────────┐  ┌──────────┐  ┌────────────────┐  │
-│  │ Investigation│  │ KPI strip│  │ Supporting     │  │
-│  │ queue       │  │          │  │ charts         │  │
-│  │ (primary)   │  │(secondary│  │ (tertiary)     │  │
-│  └─────────────┘  └──────────┘  └────────────────┘  │
-└──────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    A["RevenueCat API v2\n/metrics/overview\n/charts/{name}?realtime=true"] --> B["Server-side normalization\nFetch curated metrics + chart series\nFilter incomplete data points\nNormalize comparison windows (7d vs prior 7d)"]
+    B --> C["Deterministic brief engine\nDetect notable metric movements (>5% threshold)\nDetect cross-metric contradictions\nRank investigation priorities\nRate metrics averaged, counts/revenue summed"]
+    C --> D["Thin command-center shell"]
+    D --> E["🔍 Investigation queue\n(primary)"]
+    D --> F["📊 KPI strip\n(secondary)"]
+    D --> G["📈 Supporting charts\n(tertiary)"]
 ```
 
 ### 1. RevenueCat API layer
