@@ -402,7 +402,10 @@ Not unlimited filters everywhere. Just one sharp drill-down path, like:
 ### 3. Better investigation pathways
 Each finding could link directly to the most relevant supporting view.
 
-### 4. Scheduled operator mode
+### 4. Mobile widget for at-a-glance KPIs
+An iOS or Android home screen widget that surfaces your top subscription metrics — MRR, revenue, churn, active trials — without opening an app. Founders and operators check their phones constantly. Meeting them there with a glanceable KPI strip is a natural extension of the brief-first philosophy.
+
+### 5. Scheduled operator mode
 Generate the brief automatically every week and route it to the right people or agents.
 
 That is where the product starts to become an actual monetization operating system.
