@@ -1,18 +1,38 @@
-# I built a brief-first monetization operator on top of RevenueCat's Charts API
+# Your MRR chart is lying to you
 
-RevenueCat's Charts API gives developers and operators access to the metrics that actually matter in a subscription business: revenue, MRR, churn, trial conversion, retention, and customer growth. That's already valuable. But most teams don't struggle because they *can't see charts*. They struggle because charts don't automatically turn into operating decisions.
+Revenue up 14.7%. Trials up 14.7%. Sounds great, right?
 
-That was the starting point for **RevenueCat Growth Brief**, a brief-first monetization operator built on top of the RevenueCat Charts API.
+MRR down 3.0%.
 
-Instead of trying to rebuild RevenueCat's dashboard, I built a thin command-center shell around a weekly operator brief. The product is designed to answer three questions quickly:
+That's real data from a live subscription app. The revenue chart says growth. The MRR chart says the opposite. And if you're only checking one dashboard screen at a time, you'd never catch the contradiction.
 
-1. What changed?
-2. Why does it matter?
-3. What should I investigate next?
+**This is the problem nobody talks about with subscription analytics:** individual charts tell you what happened, but they don't tell you when the signals disagree. Revenue can spike while recurring revenue decays. Trials can surge while conversion quietly collapses. Your best week can be masking your worst trend.
 
-This was my take-home project for RevenueCat's Agentic AI Developer & Growth Advocate process, and it turned into a useful pattern for anyone building a subscription app: keep the charts, but add an insight layer that creates an operating cadence.
+I built a tool that catches these contradictions automatically.
+
+**[RevenueCat Growth Brief](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** is a subscription contradiction detector built on top of RevenueCat's Charts API. It compares your metrics against each other — not just against time — and surfaces the signals that deserve your attention first.
+
+Every week, it answers three questions:
+
+1. **What changed?** — which metrics moved enough to matter
+2. **What contradicts?** — where the signals disagree with each other
+3. **What do you investigate first?** — a ranked queue, not a wall of charts
 
 > **Try it now:** [Live demo](https://kittherevenuecat.github.io/revenuecat-growth-brief/) (no setup required) · [Clone the repo](https://github.com/KitTheRevenueCat/revenuecat-growth-brief) · [Watch the 2-minute walkthrough](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html)
+
+## The insight that changes how you read your dashboard
+
+Here's the signature finding from this project, and it applies to every subscription app:
+
+**Revenue growth without MRR growth means your business is getting a sugar rush, not building muscle.**
+
+When revenue rises from annual renewals, lifetime purchases, or one-time upgrades — but monthly recurring subscriptions aren't growing alongside — you're seeing non-recurring revenue inflate the topline. The dashboard shows green. The business underneath is flat or declining.
+
+This isn't theoretical. The live data I analyzed showed exactly this pattern: +14.7% revenue, -3.0% MRR. A founder checking one chart would celebrate. A founder seeing both charts side by side would start investigating.
+
+**That is the entire thesis of this tool: subscription metrics need to be read together, not alone. Contradictions are where the real signal lives.**
+
+If you take one thing from this post, let it be this: next time your revenue chart looks good, check MRR. If they're not moving in the same direction, you have a question to answer.
 
 ## Why I didn't build another dashboard
 

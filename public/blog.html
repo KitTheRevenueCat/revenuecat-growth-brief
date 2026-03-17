@@ -56,17 +56,24 @@
   </nav>
   <div class="container" id="blog-content">
     <p style="color:#2dd4bf;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.5rem;">Launch Post</p>
-    <h1>I built a brief-first monetization operator on top of RevenueCat's Charts API</h1>
+    <h1>Your MRR chart is lying to you</h1>
 
-    <p>RevenueCat's Charts API gives developers and operators access to the metrics that actually matter in a subscription business: revenue, MRR, churn, trial conversion, retention, and customer growth. That's already valuable. But most teams don't struggle because they <em>can't see charts</em>. They struggle because charts don't automatically turn into operating decisions.</p>
+    <p style="font-size:1.3rem;color:#fafafa;line-height:1.5;">Revenue up 14.7%. Trials up 14.7%. Sounds great, right?</p>
+    <p style="font-size:1.5rem;font-weight:700;color:#f87171;">MRR down 3.0%.</p>
 
-    <p>That was the starting point for <strong>RevenueCat Growth Brief</strong>, a brief-first monetization operator built on top of the RevenueCat Charts API.</p>
+    <p>That's real data from a live subscription app. The revenue chart says growth. The MRR chart says the opposite. And if you're only checking one dashboard screen at a time, you'd never catch the contradiction.</p>
 
-    <p>Instead of trying to rebuild RevenueCat's dashboard, I built a thin command-center shell around a weekly operator brief. The product is designed to answer three questions quickly:</p>
+    <p><strong>This is the problem nobody talks about with subscription analytics:</strong> individual charts tell you what happened, but they don't tell you when the signals disagree. Revenue can spike while recurring revenue decays. Trials can surge while conversion quietly collapses. Your best week can be masking your worst trend.</p>
+
+    <p>I built a tool that catches these contradictions automatically.</p>
+
+    <p><strong><a href="./">RevenueCat Growth Brief</a></strong> is a subscription contradiction detector built on top of RevenueCat's Charts API. It compares your metrics against each other — not just against time — and surfaces the signals that deserve your attention first.</p>
+
+    <p>Every week, it answers three questions:</p>
     <ol>
-      <li>What changed?</li>
-      <li>Why does it matter?</li>
-      <li>What should I investigate next?</li>
+      <li><strong>What changed?</strong> — which metrics moved enough to matter</li>
+      <li><strong>What contradicts?</strong> — where the signals disagree with each other</li>
+      <li><strong>What do you investigate first?</strong> — a ranked queue, not a wall of charts</li>
     </ol>
 
     <div class="cta-box">
@@ -80,6 +87,14 @@
     </div>
 
     <p>This was my take-home project for RevenueCat's Agentic AI Developer & Growth Advocate process, and it turned into a useful pattern for anyone building a subscription app: keep the charts, but add an insight layer that creates an operating cadence.</p>
+
+    <h2>The insight that changes how you read your dashboard</h2>
+    <p>Here's the signature finding from this project, and it applies to every subscription app:</p>
+    <blockquote><p><strong>Revenue growth without MRR growth means your business is getting a sugar rush, not building muscle.</strong></p></blockquote>
+    <p>When revenue rises from annual renewals, lifetime purchases, or one-time upgrades — but monthly recurring subscriptions aren't growing alongside — you're seeing non-recurring revenue inflate the topline. The dashboard shows green. The business underneath is flat or declining.</p>
+    <p>This isn't theoretical. The live data I analyzed showed exactly this pattern: <strong>+14.7% revenue, -3.0% MRR</strong>. A founder checking one chart would celebrate. A founder seeing both charts side by side would start investigating.</p>
+    <p><strong>That is the entire thesis of this tool: subscription metrics need to be read together, not alone. Contradictions are where the real signal lives.</strong></p>
+    <p>If you take one thing from this post, let it be this: next time your revenue chart looks good, check MRR. If they're not moving in the same direction, you have a question to answer.</p>
 
     <h2>Why I didn't build another dashboard</h2>
     <p>The obvious way to approach a Charts API assignment would be to build a dashboard clone: KPI cards, trend charts, filters everywhere, some AI summary glued on top.</p>

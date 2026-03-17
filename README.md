@@ -1,18 +1,22 @@
 # RevenueCat Growth Brief
 
-A brief-first monetization operator built on top of the RevenueCat Charts API.
+**A subscription contradiction detector built on RevenueCat's Charts API.**
 
-**[Live Demo →](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** (mock review-safe mode) | **[Video Walkthrough →](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html)** (107s)
+Revenue up 14.7%. MRR down 3.0%. Your dashboard shows green. Your business tells a different story.
 
-## What it is
+**[Live Demo →](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** | **[Blog Post →](https://kittherevenuecat.github.io/revenuecat-growth-brief/blog.html)** | **[Video →](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html)** (2 min)
 
-RevenueCat Growth Brief is a lightweight operator tool for subscription apps. It combines a thin command-center shell with a rules-based weekly brief that answers three practical questions:
+## What it does
 
-1. What changed?
-2. Why does it matter?
-3. What should I investigate next?
+RevenueCat Growth Brief compares your subscription metrics **against each other** — not just against time — and surfaces the contradictions that deserve your attention first.
 
-Instead of trying to rebuild RevenueCat's dashboard, this project focuses on the insight layer: a compact set of KPIs and charts, plus a generated weekly monetization brief that teams can use in an operating cadence.
+Every week, it answers three questions:
+
+1. **What changed?** — which metrics moved enough to matter
+2. **What contradicts?** — revenue up but MRR down? trials up but conversion down?
+3. **What do you investigate first?** — a ranked queue, not a wall of charts
+
+Instead of rebuilding RevenueCat's dashboard, this project adds the missing layer: a contradiction detector that turns chart data into an operating cadence.
 
 ## Why this exists
 
