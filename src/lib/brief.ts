@@ -36,15 +36,25 @@ function compareRecent(chart: ChartResponse, measureName?: string, size = 7) {
   const series = chartSeries(chart, measureName);
   const recent = series.slice(-size);
   const prior = series.slice(-(size * 2), -size);
+  const unit = chart.measures.find((m) => m.display_name === (measureName || chart.measures[0]?.display_name))?.unit || chart.measures[0]?.unit || "#";
+  const isRate = unit === "%";
 
-  const recentSum = recent.reduce((sum, point) => sum + point.value, 0);
-  const priorSum = prior.reduce((sum, point) => sum + point.value, 0);
-  const delta = priorSum === 0 ? 0 : ((recentSum - priorSum) / priorSum) * 100;
+  const reduceWindow = (points: { value: number }[]) => {
+    if (!points.length) return 0;
+    if (isRate) return points.reduce((sum, point) => sum + point.value, 0) / points.length;
+    return points.reduce((sum, point) => sum + point.value, 0);
+  };
+
+  const recentValue = reduceWindow(recent);
+  const priorValue = reduceWindow(prior);
+  const delta = priorValue === 0 ? 0 : ((recentValue - priorValue) / priorValue) * 100;
 
   return {
-    recentSum,
-    priorSum,
+    recentValue,
+    priorValue,
     delta,
+    isRate,
+    unit,
     points: series,
   };
 }
@@ -67,14 +77,14 @@ export function generateGrowthBrief(input: {
     sections.push({
       title: "Revenue momentum improved",
       summary: `Revenue increased ${revenue.delta.toFixed(1)}% versus the prior comparison window.`,
-      evidence: `Recent period revenue ${formatNumber(revenue.recentSum, "$" )} vs prior ${formatNumber(revenue.priorSum, "$")}.`,
+      evidence: `Recent period revenue ${formatNumber(revenue.recentValue, "$" )} vs prior ${formatNumber(revenue.priorValue, "$")}.`,
       action: "Check which product duration, offering, or acquisition segment contributed most and consider doubling down on that mix in the next promotion or paywall test.",
     });
   } else if (revenue.delta < -5) {
     sections.push({
       title: "Revenue slowed materially",
       summary: `Revenue declined ${Math.abs(revenue.delta).toFixed(1)}% versus the prior comparison window.`,
-      evidence: `Recent period revenue ${formatNumber(revenue.recentSum, "$" )} vs prior ${formatNumber(revenue.priorSum, "$")}.`,
+      evidence: `Recent period revenue ${formatNumber(revenue.recentValue, "$" )} vs prior ${formatNumber(revenue.priorValue, "$")}.`,
       action: "Review whether trial starts, conversion rate, or churn moved against you. Start with paywall traffic quality and renewal/cancellation patterns before changing pricing.",
     });
   }
@@ -83,14 +93,14 @@ export function generateGrowthBrief(input: {
     sections.push({
       title: "Trial conversion weakened",
       summary: `Trial conversion rate fell ${Math.abs(conversion.delta).toFixed(1)}% compared with the prior period.`,
-      evidence: `Recent conversion signal ${conversion.recentSum.toFixed(1)} vs prior ${conversion.priorSum.toFixed(1)} on aggregated chart values.`,
+      evidence: `Recent average conversion rate ${conversion.recentValue.toFixed(1)}% vs prior ${conversion.priorValue.toFixed(1)}%.`,
       action: "Inspect paywall message-to-offer fit, introductory offer mix, and whether a traffic/channel shift is bringing in lower-intent users.",
     });
   } else if (conversion.delta > 5) {
     sections.push({
       title: "Trial conversion improved",
       summary: `Trial conversion rate improved ${conversion.delta.toFixed(1)}% versus the prior period.`,
-      evidence: `Recent conversion signal ${conversion.recentSum.toFixed(1)} vs prior ${conversion.priorSum.toFixed(1)} on aggregated chart values.`,
+      evidence: `Recent average conversion rate ${conversion.recentValue.toFixed(1)}% vs prior ${conversion.priorValue.toFixed(1)}%.`,
       action: "Capture what changed recently — paywall copy, acquisition mix, product mix, or offer structure — so you can intentionally preserve the lift.",
     });
   }
@@ -99,7 +109,7 @@ export function generateGrowthBrief(input: {
     sections.push({
       title: "Churn pressure increased",
       summary: `Churn moved up ${churn.delta.toFixed(1)}% versus the prior period.`,
-      evidence: `Recent churn signal ${churn.recentSum.toFixed(1)} vs prior ${churn.priorSum.toFixed(1)}.`,
+      evidence: `Recent average churn signal ${churn.recentValue.toFixed(1)}% vs prior ${churn.priorValue.toFixed(1)}%.`,
       action: "Review cancellation timing, renewal-cycle cohorts, and whether a recent acquisition push brought in lower-retention subscribers.",
     });
   }
@@ -108,7 +118,7 @@ export function generateGrowthBrief(input: {
     sections.push({
       title: "Top-of-funnel grew faster than conversion",
       summary: `Trial starts increased ${trials.delta.toFixed(1)}%, but conversion did not improve alongside them.`,
-      evidence: `Trials recent ${formatNumber(trials.recentSum, "#")} vs prior ${formatNumber(trials.priorSum, "#")}.`,
+      evidence: `Trials recent ${formatNumber(trials.recentValue, "#")} vs prior ${formatNumber(trials.priorValue, "#")}.`,
       action: "Treat this as a traffic-quality or paywall-fit investigation. More trials are only good if conversion and retention stay healthy.",
     });
   }
