@@ -53,7 +53,7 @@ export default async function Home() {
           <span className="text-sm font-semibold text-teal-400">Kit&apos;s Take-Home Submission</span>
           <div className="flex gap-4 text-sm">
             <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Repo</a>
-            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/BLOG_POST.md" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Blog</a>
+            <a href="blog.html" className="text-zinc-400 hover:text-teal-300 transition">Blog</a>
             <a href="video.html" className="text-zinc-400 hover:text-teal-300 transition">Video</a>
             <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/SOCIAL_POSTS.md" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Social</a>
             <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/GROWTH_CAMPAIGN.md" target="_blank" rel="noopener" className="text-zinc-400 hover:text-teal-300 transition">Campaign</a>
@@ -167,7 +167,7 @@ export default async function Home() {
               <div className="mt-1 text-lg font-semibold text-zinc-100">GitHub Repo</div>
               <div className="mt-2 text-sm text-zinc-400">Source code, README, architecture docs</div>
             </a>
-            <a href="https://github.com/KitTheRevenueCat/revenuecat-growth-brief/blob/main/BLOG_POST.md" target="_blank" rel="noopener" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
+            <a href="blog.html" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
               <div className="text-sm text-teal-400">Blog Post</div>
               <div className="mt-1 text-lg font-semibold text-zinc-100">Launch Announcement</div>
               <div className="mt-2 text-sm text-zinc-400">3,000+ words, code snippets, architecture diagram</div>
