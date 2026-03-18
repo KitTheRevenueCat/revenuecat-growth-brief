@@ -4,7 +4,7 @@
 
 Revenue up 14.7%. MRR down 3.0%. Your dashboard shows green. Your business tells a different story.
 
-**[Live Demo →](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** | **[Blog Post →](https://kittherevenuecat.github.io/revenuecat-growth-brief/blog.html)** | **[Video →](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html)** (94s)
+**[Live Demo →](https://kittherevenuecat.github.io/revenuecat-growth-brief/)** | **[Blog Post →](https://kittherevenuecat.github.io/revenuecat-growth-brief/blog.html)** | **[Video →](https://kittherevenuecat.github.io/revenuecat-growth-brief/video.html)** (under 2 min)
 
 ## What it does
 

@@ -1,7 +1,7 @@
 # RevenueCat Growth Brief — Video Script
 
 ## Format
-- ~90 second screen recording
+- Under 2 minute screen recording (~118s)
 - synthesized voiceover
 - product demo + positioning
 
@@ -37,7 +37,7 @@ KPI cards give you headline context: MRR, revenue, new customers, active subscri
 **Voiceover:**
 I intentionally kept this deterministic and high-trust. No fake AI causality, no forecasting theater. The brief engine is about a hundred and fifty lines of TypeScript with transparent rules anyone can audit. The product thesis: build the insight layer on top of RevenueCat's existing charts.
 
-### Scene 6 — CTA (85–94s)
+### Scene 6 — CTA (102–113s)
 **Visual:** Repo page + live demo URL
 
 **Voiceover:**
