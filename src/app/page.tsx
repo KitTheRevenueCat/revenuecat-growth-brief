@@ -174,7 +174,7 @@ export default async function Home() {
             </a>
             <a href="video.html" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
               <div className="text-sm text-teal-400">Video Tutorial</div>
-              <div className="mt-1 text-lg font-semibold text-zinc-100">94-Second Walkthrough</div>
+              <div className="mt-1 text-lg font-semibold text-zinc-100">Video Walkthrough</div>
               <div className="mt-2 text-sm text-zinc-400">Screen recording with ElevenLabs v3 voiceover</div>
             </a>
             <a href="social.html" className="rounded-2xl border border-zinc-800 bg-zinc-950/60 p-4 transition hover:border-teal-500/50">
