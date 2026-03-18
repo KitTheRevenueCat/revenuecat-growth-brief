@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[15800,["/_next/static/chunks/4ad0495aa44928bf.js"],"ViewportBoundary"]
-3:I[15800,["/_next/static/chunks/4ad0495aa44928bf.js"],"MetadataBoundary"]
+2:I[15800,["/revenuecat-growth-brief/_next/static/chunks/4ad0495aa44928bf.js"],"ViewportBoundary"]
+3:I[15800,["/revenuecat-growth-brief/_next/static/chunks/4ad0495aa44928bf.js"],"MetadataBoundary"]
 4:"$Sreact.suspense"
-5:I[25500,["/_next/static/chunks/4ad0495aa44928bf.js"],"IconMark"]
-0:{"buildId":"ELxKybk-DGl2UqXYEdpx4","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"RevenueCat Growth Brief"}],["$","meta","1",{"name":"description","content":"A brief-first monetization operator built on top of the RevenueCat Charts API."}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L5","3",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
+5:I[25500,["/revenuecat-growth-brief/_next/static/chunks/4ad0495aa44928bf.js"],"IconMark"]
+0:{"buildId":"g_xotN1Wwe3FjJEdjP5IK","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"RevenueCat Growth Brief"}],["$","meta","1",{"name":"description","content":"A brief-first monetization operator built on top of the RevenueCat Charts API."}],["$","link","2",{"rel":"icon","href":"/revenuecat-growth-brief/favicon.ico?favicon.0b3bf435.ico","sizes":"256x256","type":"image/x-icon"}],["$","$L5","3",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
